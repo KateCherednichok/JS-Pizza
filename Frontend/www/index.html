@@ -1,75 +1,109 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Pizza</title>
+<head lang="ua">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pizza2023</title>
 
     <!-- Bootsrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
     <!-- LESS основний файл -->
-    <link rel="stylesheet/less" type="text/css" href="assets/less/main.less" />
+    <link rel="stylesheet/less" type="text/css" href="assets/less/main.less"/>
     <!-- LESS JavaScript компілятор -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
 
-
 </head>
 <body>
-<div id="cart"></div>
-<div class="container">
-    <div class="row" id="pizza_list">
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_1.jpg">
 
-                <div class="caption"><h3>Thumbnail label</h3>
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 2</a>
-                        <a href="#" class="btn btn-default">Button 1</a>
-                    </p>
+<main>
+    <section class="menu">
+        <header class="header-for-menu">
+            <div class="contacts">
+                <div class="first-row">
+                    <section>
+                        <span class="telephone_label">(044) 222 5 222</span>
+                        <span class="schedule_label">24 години/ 7 днів на тиждень</span>
+                        <span class="delivery_label">Безкоштовна доставка піци</span>
+                    </section>
+                    <button class="enter">Ввійти</button>
+                </div>
+                <hr>
+                <div class="second-row">
+                    <div class="second-row-content">
+                        <p>Піца</p>
+                    </div>
+                    <button class="button-for-small-screen enter" id="small">Ввійти</button>
                 </div>
             </div>
-        </div>
+        </header>
 
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_2.jpg">
-
-                <div class="caption"><h3>Thumbnail label</h3>
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 3</a>
-                        <a href="#" class="btn btn-default">Button 4</a>
-                    </p>
-                </div>
+        <section class="pizza-label">
+            <div class="label-text">
+                <div class="pizza-t">PIZZA</div>
+                <div class="KMA-t">KMA</div>
             </div>
-        </div>
+            <img class="label-img" src="assets/images/discount.svg"/>
+        </section>
 
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail pizza-card">
-                <img src="assets/images/pizza_3.jpg">
-
-                <div class="caption"><h3>Thumbnail label</h3>
-
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
-                    <p>
-                        <a href="#" class="btn btn-primary">Button 5</a>
-                        <a href="#" class="btn btn-default">Button 6</a>
-                    </p>
-                </div>
+        <section class="filters">
+            <h2 class="selected-category" id="filter">Усі піци
+                <span class="amount-in-this-category" >8</span>
+            </h2>
+            <div class="filter-buttons">
+                <button class="active" id="all">Усі</button>
+                <button id="meat">М'ясні</button>
+                <button id="pineapple">З ананасами</button>
+                <button id="mushrooms">З грибами</button>
+                <button id="see-food">З морепродуктами</button>
+                <button id="vega">Вега</button>
             </div>
+        </section>
+        <!-- <div class="col-xs-12" style="height: 20px"></div>-->
+        <div id="box">
+            <section id="pizza-list">
+
+            </section>
         </div>
-    </div>
-</div>
+        <section class="discount">
+            <img class="discount-img" src="assets/images/discount.svg"/>
+            <div class="discount-text">
+                <div class="this-t">ЦЬОГО</div>
+                <div class="week-t">ТИЖНЯ</div>
+                <div class="all-t">НА ВСЕ</div>
+                <div class="border">.............</div>
+                <div class="sale">-20%</div>
+            </div>
+        </section>
+        <footer>
+            <div>Pizza2023 - практичний проект в межах курсу Основи веб-технологій в Києво-Могилянській Академії.</div>
+            <div>Доставка піци не здійснюється.</div>
+        </footer>
+    </section>
+    <section class="basket">
+        <header class="header-for-basket">
+            <span class="order-t">Замовлення</span>
+            <span class="amount-of-different-types">0</span>
+            <button class="remove-all">Очистити замовлення</button>
+        </header>
+        <div class="buy-list">
+        </div>
+        <section class="payable">
+            <section class="line-sum">
+                <span class="summary">Сума замовлення</span>
+                <label class="price">
+                    <span class="number">0</span> грн
+                </label>
+            </section>
+            <button class="order-button">Замовити</button>
+        </section>
+    </section>
+
+</main>
+<script type="module" src="assets/js/JavaScriptFile.js"></script>
 
 <!-- jQuery JavaScript -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
 <!--Bootsrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

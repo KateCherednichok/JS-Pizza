@@ -1,3 +1,498 @@
-@mainColor: blue;
-
+//@mainColor: blue;
 @import "pizza/pizza-card";
+
+:root {
+  --main-color: #fffff5;
+  --corner-radius: 6px;
+  --circle-button-rad: 50%;
+  --regular-font-size: 1.2rem;
+  --orange-color: #fea634;
+  --border-color: #D16200;
+}
+
+
+body {
+  min-width: 500px;
+  min-height: 600px;
+}
+
+main {
+  display: flex;
+  min-width: 600px;
+}
+
+
+.menu {
+  flex: 1;
+  width: calc(100% - 300px);
+  margin-right: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.basket {
+  position: fixed;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  background-color: #f8e8cf;
+  width: 300px;
+  height: 100vh;
+  box-shadow: -3px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+hr {
+  margin: 10px 0;
+}
+
+.header-for-menu {
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,0.8) ;
+  color: var(--main-color);
+  position: fixed;
+  padding-right: 300px;
+  z-index: 1;
+}
+
+.contacts {
+  min-width: 315px;
+  padding-left: 160px;
+  padding-right: 33px;
+}
+
+.contacts .first-row {
+  display: flex;
+  justify-content: space-between;
+  height: 55%;
+  border-bottom-color: white;
+}
+
+.first-row section {
+  margin-top: 15px;
+}
+.button-for-small-screen #small{
+  margin-top: -5px;
+  height: 43px;
+}
+
+.first-row span {
+  display: inline-block;
+  margin-right: 20px;
+  color: #8f8f8f;
+}
+
+.first-row .telephone_label {
+  font-size: 2rem;
+}
+
+.first-row .schedule_label {
+  font-size: 1.2rem;
+}
+
+.first-row .delivery_label {
+  font-size: 1.7rem;
+}
+
+.contacts button {
+  box-sizing: border-box;
+  width: 90px;
+  font-size: 2rem;
+  border-radius: var(--corner-radius);
+  background-color: #efa11e;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: -5px;
+}
+
+.contacts .second-row {
+  display: inline-block;
+  display: flex;
+  justify-content: space-between;
+  border-bottom-color: white;
+}
+
+.second-row .second-row-content {
+  font-size: 1.7rem;
+}
+
+.pizza-label {
+  position: fixed;
+  box-sizing: border-box;
+  z-index: 1;
+  margin-left: 10px;
+}
+.label-text {
+  background-color: #EA862E;
+  color: white;
+  border-right: 1px solid #D16200;
+  border-left: 1px solid #D16200;
+}
+.label-text .pizza-t {
+  box-sizing: border-box;
+  font-size: 2.7rem;
+  padding: 15px 20px 0;
+  margin-bottom: 0;
+}
+.label-text .KMA-t {
+  box-sizing: border-box;
+  font-size: 3rem;
+  padding: 5px 25px 10px;
+  margin-bottom: -7px;
+}
+
+.label-img {
+  box-sizing: border-box;
+  transform: rotate(180deg);
+  background-color: rgba(0,0,0,0);
+  width: 100%;
+}
+
+.selected-category {
+  display: inline-block;
+  height: 25px;
+  padding: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.amount-in-this-category ,.amount-of-different-types{
+  background-color: #ee8900;
+  border-radius: 20px;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  padding-top: 4px;
+  box-sizing: border-box;
+}
+.amount-of-different-types{
+  height: 20px;
+  width: 20px;
+  padding-top: 0;
+}
+
+.filters {
+  text-align: center;
+  padding-top: 110px;
+}
+.filter-buttons {
+  padding-top: 10px;
+  font-size: 1.7rem;
+}
+.filter-buttons button {
+  min-width: 50px;
+  min-height: 35px;
+  margin-right: 10px;
+  text-align: center;
+  border: none;
+  border-radius: 7px;
+  background-color: #fffff5;
+  color: #ec861c;
+}
+
+.filter-buttons button:active {
+  background-color: #ee8900;
+}
+.filter-buttons button:focus {
+  background-color: #ee8900;
+  color: white;
+}
+
+.filter-buttons .active {
+  background-color: #ee8900;
+  color: white;
+  border-radius: 7px;
+}
+#box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.discount {
+  width: 100px;
+  position: fixed;
+  box-sizing: border-box;
+  margin-left: 10px;
+  z-index: 1;
+  bottom: 0;
+}
+.discount-text {
+  text-align: center;
+  background-color: #EA862E;
+  color: white;
+  border-right: 1px solid #D16200;
+  border-left: 1px solid #D16200;
+}
+
+.this-t, .all-t, .week-t, .border, .sale{
+  box-sizing: border-box;
+  font-weight: 600;
+}
+
+.discount-text .this-t {
+  margin-top: -5px;
+  font-size: 2rem;
+  padding: 15px 12px 0;
+}
+.discount-text .week-t {
+  font-size: 1.9rem;
+  padding: 0 12px;
+}
+.discount-text .all-t {
+  font-size: 1.8rem;
+  padding: 0 15px;
+}
+.discount-text .border {
+  color: #dd7108;
+  font-size: 2rem;
+  padding: 0 15px;
+  margin-top: -20px;
+}
+.discount-text .sale {
+  font-size: 1.9rem;
+  padding: 0 15px;
+}
+.discount-img {
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,0);
+  width: 100%;
+}
+
+footer {
+  background-color: white;
+  width: 100%;
+  max-height: 130px;
+  bottom: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  z-index: -1;
+  text-align: center;
+  border-top: 1px solid lightgray;
+}
+
+.header-for-basket {
+  height: 100px;
+  box-sizing: border-box;
+  text-align: center;
+  padding-top: 30px;
+  background-color: white;
+}
+.header-for-basket .remove-all{
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  color: gray;
+  margin-left: 15px;
+}
+.remove-all:hover {
+  background-color: #eee;
+}
+.header-for-basket .amount-in-this-category {
+  height: 25px;
+  width: 25px;
+}
+
+.order-t{
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+
+.payable {
+  bottom: 0;
+  text-align: center;
+  height: 150px;
+  font-size: 2rem;
+  background-color: white;
+}
+.payable label {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.payable .price {
+  padding-left: 30px;
+}
+.payable button {
+  height: 30%;
+  width: 90%;
+  border-radius: 7px;
+  color: white;
+}
+
+#pizza-list {
+  width: 1000px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+
+.resize {
+  width: 33.3%;
+}
+.buy-list {
+  flex-grow: 1;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+.items-to-buy {
+  width: 300px;
+  //height: 130px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.item-info{
+  width: 260px;
+}
+
+.items-to-buy label {
+  box-sizing: border-box;
+  padding: 10px 10px;
+  font-size: 1.8rem;
+  color: #efa11e;
+}
+.item-info img {
+  display: inline-block;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+.item-image {
+  width: 50px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+.item-info h4 {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 3px;
+  color: #333333;
+}
+.item-info .counter {
+  color: #333333;
+}
+.item-info button {
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+.item-info .minus {
+  background-color: #cc3a33;
+  margin-left: 15px;
+}
+.item-info .plus {
+  background-color: #49a649;
+}
+.item-info .remove {
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+  color: #efa11e;
+  border: 1px solid #d3d3d4;
+}
+
+.item-image img {
+  flex-shrink: 0;
+  margin-top: 15px;
+  height: 100px;
+  width: 100px;
+  left: 200px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.summary{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.line-sum{
+  margin-top: -20px;
+  height: 60px;
+}
+
+@media (max-width: 1200px) {
+  .first-row .delivery_label {
+    display: none;
+  }
+  #pizza-list {
+    width: 575px;
+  }
+  .resize {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+  }
+}
+
+.enter, .buy-big, .buy-small, .order-button{
+  background-color: var(--orange-color);
+  border: 1px solid ;
+  border-color: var(--border-color);
+}
+
+@media (max-width: 950px) {
+  .first-row .schedule_label {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .first-row .schedule_label {
+    display: none;
+  }
+  .resize {
+    width: 100%;
+  }
+  .pizza-card {
+    width: 100%;
+    height: 100%;
+  }
+  .pizza-card img {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 760px) {
+  .first-row .telephone_label {
+    font-size: 1.3rem;
+  }
+  .first-row button {
+    display: none;
+  }
+  .second-row button{
+    display: inline-block;
+  }
+  .second-row .second-row-content p{
+    display: none;
+  }
+  .pizza-card {
+    width: 100%;
+    height: 100%;
+  }
+  .button-for-small-screen {
+    display: block;
+  }
+}
+.button-for-small-screen {
+  display: none;
+}
